@@ -1,0 +1,32 @@
+.main {
+  @apply cursor-pointer inline-flex items-baseline;
+}
+
+.inner {
+  @apply relative top-0.5;
+}
+
+.label {
+  @apply ml-1.5;
+}
+
+.inner .input {
+  @apply absolute top-0 left-0 w-full h-full opacity-0;
+}
+
+.inner .icon {
+  @apply w-4 h-4 border border-slate-600 rounded-full transition-colors flex items-center justify-center;
+}
+
+.inner .icon::after {
+  content: '';
+  @apply absolute table w-full h-full bg-slate-700 rounded-full transition-all opacity-0 scale-0;
+}
+
+.main.active .inner .icon {
+  @apply border-slate-700;
+}
+
+.main.active .inner .icon::after {
+  @apply scale-50 opacity-100;
+}

@@ -1,0 +1,33 @@
+.main {
+  @apply cursor-pointer inline-flex items-baseline;
+}
+
+.inner {
+  @apply relative top-0.5;
+}
+
+.label {
+  @apply ml-1.5;
+}
+
+.inner .input {
+  @apply absolute top-0 left-0 w-full h-full opacity-0;
+}
+
+.inner .icon {
+  @apply w-[16px] h-[16px] border border-slate-600 rounded transition-colors flex items-center justify-center;
+}
+
+.inner .icon::after {
+  content: '';
+  @apply absolute table w-[30%] h-[55%] border-white border-2 border-t-0 border-l-0 rotate-45 scale-0 opacity-0 transition-all duration-75 delay-100 ease-out;
+}
+
+.main.active .inner .icon{
+  @apply bg-slate-700;
+}
+
+.main.active .inner .icon::after {
+  @apply scale-100 opacity-100;
+}
+
